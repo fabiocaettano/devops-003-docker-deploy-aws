@@ -1,8 +1,6 @@
 # REALIZANDO UM DEPLOY NA AWS
 
-![Badge](https://img.shields.io/badge/Blog-Rocketseat-%237159c1?style=for-the-badge&logo=ghost)
-
-### PASSO 1 - CRIAR CONTA NA AWS
+![AWS](https://console.aws.amazon.com)
 Gerar credenciais utilizando o serviço IAM e inserir politicas.
 
 ### PASSO 2 - INSTALAR AWS CLI
