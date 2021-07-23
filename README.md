@@ -15,7 +15,17 @@ No processo de criação do usuário é necessário vincular as seguintes politi
 - Administrador Access;
 - AdministradorEC2COntainerServiceforEC2Role
 
-### PASSO 2 - INSTALAR AWS CLI
+
+
+### PASSO 2 - INSTALAR AWS 
+O aws cli é uma ferramenta que permite interar com os serviços da AWS usando comandos no shell da linha de comando.
+
+Teste foi realizado no ambiente Linux, Distro Ubuntu.
+```
+$aws --version
+```
+
+![ Guia de Instalação da AWS ] (https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
 
 ### PASSO 3 - INSTALAR DOCKER-MACHINE
 
