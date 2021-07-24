@@ -2,6 +2,7 @@
 
 ### TECNOLOGIAS:
 [AWS](https://console.aws.amazon.com)
+
 [DOCKER MACHINE](https://docs.docker.com/machine)
 
 
@@ -71,7 +72,8 @@ Com o recurso de Multistage Build é possivel otimizar o processo é reduzir o t
 
 
 ### LINKS:
-- ![Instalação do AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
+[Instalação do AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
+[Instalação do Docker-Machine](https://docs.docker.com/machine/install-machine/)
 
 
 ### GLOSSÁRIO:
