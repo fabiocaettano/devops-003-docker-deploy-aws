@@ -3,35 +3,25 @@
 ### TECNOLOGIAS:
 - ![AWS](https://console.aws.amazon.com)
 - ![DOCKER MACHINE](https://docs.docker.com/machine)
-- ![LINUX - UBUNTU 20.0.4]
+
 
 ### INSTALAÇÕES NECESSÁRIAS
-- ![Instalação do AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
 
-Checar a versão:
+Checar a versão do aws-cli:
 ```
 $aws --version
 ```
 
-- ![Instalação do Docker-Machine](https://docs.docker.com/machine/install-machine/)
-
-Checar a versão:
+Checar a versão do docker-machine:
 ```
 $docker-machine --version
 ```
 
 
+### AUTENTICAR-SE NO SERVIÇO AWS
+Para realizar o deploy na AWS é necessário criar uma conta.
 
-
-
-
-
-
-
-
-
-### PASSO 1 - CREDENCIAIS
-Para realizar o deploy na AWS é necessário criar um usuário através do serviço IAM.
+E também criar um usuário através do serviço IAM.
 
 O IAM irá fornecer um KEY ID e ACCESS KEY.
 
@@ -41,28 +31,28 @@ No processo de criação do usuário é necessário vincular as seguintes politi
 - Administrador Access;
 - AdministradorEC2COntainerServiceforEC2Role
 
+Com as credencias acesse o terminal e digite comando:
+```
+$aws configure
+```
+Informe as credenciais:
+```
+$aws configure
+```
 
 
-### PASSO 2 - INSTALAR AWS CLI
-### PASSO 3 - INSTALAR DOCKER-MACHINE
-O docker-machine é uma ferramenta que instala o docker-engine em host virtual, isto possibilita executar comandos em um data center ou em um cloud provider.
+### DOCKERFILE E MULTISTAGE BUILD
 
-
-
-### PASSO 4 - APLICAÇÃO VUE.js
-O foco desse laboratório é o deploy na AWS,aplicação é bem simples apenas para que possamos realizar o build.
-
-
-### PASSO 5 - DOCKERFILE E MULTISTAGE BUILD
-
-
-
-## PASSO 6 - AUTENTICAR-SE NO SERVIÇO AWS
+Com a configuração abaixo a imagem obteve o tamanho de 266 MB:
 
 
 
+Com o recurso de Multistage Build é possivel otimizar o processo é reduzir o tamanho da imagem para 26 MB:
 
-### PASSO 7 - SUBIR A IMAGEM PARA SERVIÇO AWS
+
+
+
+### AWS - ELASTIC CONTAINER REGISTER (ECR)
 
 
 
@@ -78,8 +68,15 @@ O foco desse laboratório é o deploy na AWS,aplicação é bem simples apenas p
 
 ### PASSO 10 - EXCLUIR RECURSOS
 
+
+
+### LINKS:
+- ![Instalação do AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
+
+
 ### GLOSSÁRIO:
 - aws cli: O aws cli é uma ferramenta que permite interar com os serviços da AWS usando comandos no shell da linha de comando.
+- docker-machine: é uma ferramenta que instala o docker-engine em host virtual, isto possibilita executar comandos em um data center ou em um cloud provider.
 
 
 
