@@ -7,9 +7,9 @@
 [DOCKER MACHINE](https://docs.docker.com/machine)
 
 
-### Criando a Imagem sem MultiStage Build
+### Criando a Imagem
 
-O Dockerfile abaixo gerou um tamanho de 266 MB:
+O Dockerfile abaixo gerou uma imagem com o tamanho de 266 MB:
 ```
 FROM node
 WORKDIR /app
@@ -21,7 +21,24 @@ CMD [ "node", "index.js" ]
 ```
 
 
-Com o recurso de Multistage Build foi reduzi o tamanho da imagem para 26 MB:
+Com o recurso de Multistage Build reduzi o tamanho da imagem para 26 MB:
+```
+FROM node:lts-alpine as build
+WORKDIR /app
+RUN npm install -g http-server
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+
+FROM nginx:alpine
+WORKDIR /app
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
 
 
 
