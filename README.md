@@ -9,7 +9,7 @@
 
 ### Criando a Imagem sem MultiStage Build
 
-Com a configuração abaixo a imagem obteve o tamanho de 266 MB:
+O Dockerfile abaixo gerou um tamanho de 266 MB:
 ```
 FROM node
 WORKDIR /app
