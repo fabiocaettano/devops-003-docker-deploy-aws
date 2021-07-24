@@ -1,54 +1,53 @@
 # REALIZANDO UM DEPLOY NA AWS
 
+
 ### TECNOLOGIAS:
 [AWS](https://console.aws.amazon.com)
 
 [DOCKER MACHINE](https://docs.docker.com/machine)
 
 
-### INSTALAÇÕES NECESSÁRIAS
+### Procedimento Docker
 
+Com a configuração abaixo a imagem obteve o tamanho de 266 MB:
+```
+$ aws --version
+```
+
+Com o recurso de Multistage Build foi reduzi o tamanho da imagem para 26 MB:
+
+
+
+
+
+### Procedimento AWS
 Checar a versão do aws-cli:
 ```
-$aws --version
+$ aws --version
 ```
-
-Checar a versão do docker-machine:
-```
-$docker-machine --version
-```
-
-
-### AUTENTICAR-SE NO SERVIÇO AWS
-Para realizar o deploy na AWS é necessário criar uma conta.
-
-E também criar um usuário através do serviço IAM.
-
-O IAM irá fornecer um KEY ID e ACCESS KEY.
-
-No processo de criação do usuário é necessário vincular as seguintes politicas: 
-
-- AmazonEC2ContainerRegisterFullAccess;
-- Administrador Access;
-- AdministradorEC2COntainerServiceforEC2Role
 
 Com as credencias acesse o terminal e digite comando:
 ```
-$aws configure
+$ aws configure
 ```
+
 Informe as credenciais:
 ```
-$aws configure
+$ AWS Access Key ID:
+$ AWS Secret Access Key:
+$ Default region name:
+$ Default output format:
+
 ```
 
 
-### DOCKERFILE E MULTISTAGE BUILD
-
-Com a configuração abaixo a imagem obteve o tamanho de 266 MB:
 
 
+Checar a versão do docker-machine:
+```
+$ docker-machine --version
+```
 
-Com o recurso de Multistage Build é possivel otimizar o processo é reduzir o tamanho da imagem para 26 MB:
 
 
 
@@ -79,6 +78,3 @@ Com o recurso de Multistage Build é possivel otimizar o processo é reduzir o t
 ### GLOSSÁRIO:
 - aws cli: O aws cli é uma ferramenta que permite interar com os serviços da AWS usando comandos no shell da linha de comando.
 - docker-machine: é uma ferramenta que instala o docker-engine em host virtual, isto possibilita executar comandos em um data center ou em um cloud provider.
-
-
-
