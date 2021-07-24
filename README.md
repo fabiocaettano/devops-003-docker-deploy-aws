@@ -1,4 +1,4 @@
-# REALIZANDO UM DEPLOY NA AWS
+REALIZANDO UM DEPLOY NA AWS
 
 
 ### TECNOLOGIAS:
@@ -40,17 +40,25 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 
+Para construir a imagem execute o comando no terminal:
+```
+$ docker build -t nomeDoRepositorio/nomeDaAplicacao:tag .
+```
+
+Para visualizar a imagem:
+```
+$ docker image ls
+```
 
 
 
-
-### Procedimento AWS
-Checar a versão do aws-cli:
+### Procedimento na AWS
+Ainda no terminal verique a versão do aws-cli:
 ```
 $ aws --version
 ```
 
-Com as credencias acesse o terminal e digite comando:
+Digite comando:
 ```
 $ aws configure
 ```
@@ -67,17 +75,12 @@ $ Default output format:
 
 
 
+### AWS - ELASTIC CONTAINER REGISTER (ECR)
+
 Checar a versão do docker-machine:
 ```
 $ docker-machine --version
 ```
-
-
-
-
-
-### AWS - ELASTIC CONTAINER REGISTER (ECR)
-
 
 
 
