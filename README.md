@@ -1,8 +1,8 @@
 # REALIZANDO UM DEPLOY NA AWS
 
 ### TECNOLOGIAS:
-- ![AWS](https://console.aws.amazon.com)
-- ![DOCKER MACHINE](https://docs.docker.com/machine)
+[AWS](https://console.aws.amazon.com)
+[DOCKER MACHINE](https://docs.docker.com/machine)
 
 
 ### INSTALAÇÕES NECESSÁRIAS
