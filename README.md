@@ -7,12 +7,19 @@
 [DOCKER MACHINE](https://docs.docker.com/machine)
 
 
-### Procedimento Docker
+### Criando a Imagem sem MultiStage Build
 
 Com a configuração abaixo a imagem obteve o tamanho de 266 MB:
 ```
-$ aws --version
+FROM node
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 8080
+CMD [ "node", "index.js" ]
 ```
+
 
 Com o recurso de Multistage Build foi reduzi o tamanho da imagem para 26 MB:
 
