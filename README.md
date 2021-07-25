@@ -1,6 +1,13 @@
-# REALIZANDO UM DEPLOY NA AWS
+# REALIZANDO UM DEPLOY NO SERVIÇO AWS 
 
-Objetivo desse laboratório é realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2. Configurar um arquivo Dockerfile para gerar uma imagem da aplicação feita em vue.js. Esta imagem será armazenada no repositório da AWS, utilizando o serviço ECR. Para realizar o deploy utilizei o aws cli para autenticar o usuário no serviço da AWS, por fim, utiizie a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
+Objetivo desse laboratório:
+- Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
+- Configurar um arquivo Dockerfile para gerar uma imagem da aplicação feita em vue.js;
+- Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
+- Autenticar-se no serviço da AWS através de comando de linha;
+- Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
+- Export as porta do container;
+- Acessar aplicação através do browser.
 
 
 
@@ -76,14 +83,15 @@ Após utilizar a oção "get started" será exibido o seguinte formulário, sele
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_create.png)
 
 
+Selecione o repositório criado e utilize o botão "View Push Commands", irá surgir uma página com uma sequencia de 4 comandos para serem copiados. Explico isso logo após a imagem:
+
+![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_commands.png)
 
 
+Acesse o seu terminal e cole o comando paa autenticar-se no serviço da aws e permitindo subir as imagens para o serviço aws.
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 999999999999.dkr.ecr.us-east-1.amazonaws.com
 
-
-
-
-
+Acesse a pasta do projeto aonde está salvo o arquivo Dockerfile e execute o comando:
 Para construir a imagem execute o comando no terminal:
 ```
 $ docker build -t nomeDoRepositorio/nomeDaAplicacao:tag .
@@ -94,12 +102,19 @@ Para visualizar a imagem:
 $ docker image ls
 ```
 
-
+Ainda no terminal
 
 docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 
-
+Agora vamos subir a imagem para o repositório:
 docker push 468981229068.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
+
+
+
+Volte ao site 
+
+
+
 
 Checar a versão do docker-machine:
 ```
