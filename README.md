@@ -12,8 +12,8 @@
 
 ### Pré-requisitos:
 - Ter uma conta na AWS Service;
-- Inserir usuário na AWS utilizando o IAM;
-- Instalaçõe: aws-cli, docker e docker-machine.
+- Através do IAM (serviço da AWS) cadastrar 1 usuário e vincular as seguintes politicas:  ;
+- Instalações necessárias: aws-cli, docker e docker-machine.
 
 
 
@@ -30,7 +30,10 @@ EXPOSE 8080
 CMD [ "node", "index.js" ]
 ```
 
-Com o recurso de Multistage Build é possivel otimizar este processo de construção de image. No primeiro FROM é realizado o build da aplicação, já no segungo FROM a imagem é apenas de execução permitindo a redução de 26 MB.
+Com o recurso de Multistage Build é possivel otimizar este processo de construção de imagem.
+O arquivo Dockerfile foi reestruturado.
+No primeiro FROM é realizado o build da aplicação.
+Já no segundo FROM a imagem é apenas de execução permitindo a redução para 26 MB.
 ```
 FROM node:lts-alpine as build
 WORKDIR /app
@@ -51,7 +54,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ### Credenciais AWS
 
-Acessar o terminal do host e verique a versão do aws-cli:
+Acesse o terminal e verique a versão do aws-cli:
 ```
 $ aws --version
 ```
