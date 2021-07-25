@@ -93,7 +93,8 @@ Selecione o repositório criado e utilize o botão "View push commands":
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_commands.png)
 
 
-Será exibido uma sequencia de 4 comandos para serem copiados.
+Surgirá uma página com uma sequencia de **4 comandos** para serem copiados.
+
 
 **1º comando**:
 É outra autenticação da aws.
@@ -123,7 +124,7 @@ Solicita a execução do comando docker tag para versionamento da aplicação:
 $ docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 ```
 
-**4º comando **:
+**4º comando**:
 É momento de subir imagem para o repositório da Amazon (ECR):
 ```
 docker push 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
