@@ -71,9 +71,18 @@ $ Default output format:
 No site da AWS,procure o serviço Elastic Container Register (ECR).
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_search.png)
 
+Após utilizar a oção "get started" será exibido o seguinte formulário, selecione a opção particular e informe um nome para o repositório. Para confirmar utilize o botão "Create Repository".
+
+![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_create.png)
+
+
 
 
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 999999999999.dkr.ecr.us-east-1.amazonaws.com
+
+
+
+
 
 Para construir a imagem execute o comando no terminal:
 ```
