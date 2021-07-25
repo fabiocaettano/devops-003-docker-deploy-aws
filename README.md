@@ -137,12 +137,27 @@ Volte ao site da AWS ppara visualizar a imagem inserida no repositório:
 
 ### Criando a instância ECD através de linha de comando
 
-Priveiro vamos checar a versão do docker-machine:
+O docker-machine acessa o host virtual como Azure, AWS.
+
+Primeiro vamos checar a versão do docker-machine no terminal:
 ```
 $ docker-machine --version
 ```
 
+O comando abaxio vai gerar a instância EC2.
+```
+$ docKer-machine create --driver amazonec2 --amazonec2-instance-type "t2.micro" --amazonec2-region "us-east-1" aws0001
+```
+Importante a partir do próximo comando iremos acessar o servidor , então os próximos irão refletir no host virtual e não no host da sua máquina.
+```
+$ eval $(docker-machine env aws0001)
+```
 
+Execute os comados abaixo para checar que você está no host virtual:
+```
+$ docker image ls
+$ docker container ls -a
+```
 
 
 
