@@ -95,7 +95,7 @@ Selecione o repositório criado e utilize o botão "View push commands":
 
 Será exibido uma sequencia de 4 comandos para serem copiados.
 
-1º comando:
+**1º comando**:
 É outra autenticação da aws.
 Acesse o terminal e cole o comando:
 ```
@@ -103,7 +103,7 @@ $ aws ecr get-login-password --region us-east-1 | docker login --username AWS --
 ```
 Se tudo der certo será exibido uma mensagem no terminal: Login Successed.
 
-2º comando:
+**2º comando**:
 Solicita que a imagem seja criada no seu host.
 Agora acesse a pasta do projeto pelo terminal.
 O arquivo Dockerfile deve estar na raiz do projeto.
@@ -117,13 +117,13 @@ Para visualizar a imagem no seu host:
 $ docker image ls
 ```
 
-3º comando:
+**3º comando**:
 Solicita a execução do comando docker tag para versionamento da aplicação:
 ```
 $ docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 ```
 
-4º comando:
+**4º comando **:
 É momento de subir imagem para o repositório da Amazon (ECR):
 ```
 docker push 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
