@@ -180,10 +180,8 @@ Acessar o site:
 
 
 ### LINKS DIVERSOS:
-[Consolde AWS](https://console.aws.amazon.com)
-[Dockerizando sua aplicação Vue.js](https://br.vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
-[Instalação AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
-[Instalação Docker](https://docs.docker.com/engine/install/)
+[Consolde AWS](https://console.aws.amazon.com) | [Dockerizando sua aplicação Vue.js](https://br.vuejs.org/v2/cookbook/dockerize-vuejs-app.html) | 
+[Instalação AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html) | [Instalação Docker](https://docs.docker.com/engine/install/) |
 [Instalação Docker-Machine](https://docs.docker.com/machine/install-machine/)
 
 
