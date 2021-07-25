@@ -158,13 +158,20 @@ Execute os comados abaixo para checar que você está no host virtual:
 $ docker image ls
 $ docker container ls -a
 ```
+Agora vamos executar criar o container utizando a imagem que está salva no ECR:
+```
+$ docker run -d -p 8080:80 
+```
+
+Execute o comado:
+```
+$ docker container ls
+```
+
+É necessário liberar a porta 8080 para que possamos fazer um teste pelo browser.
 
 
-
-
-
-
-## PASSO 9 - EXPOR A PORTA 
+Acessar o site:
 
 
 
