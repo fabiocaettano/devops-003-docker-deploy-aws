@@ -1,13 +1,13 @@
 # REALIZANDO UM DEPLOY NO SERVIÇO AWS 
 
 ### Objetivo do laboratório:
--[] Configurar um arquivo Dockerfile com MultiStage Build;
--[] Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
--[] Autenticar-se no serviço da AWS através de comando de linha;
--[] Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
--[] Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
--[] Expor a porta do container;
--[] Acessar aplicação através do browser.
+- [] Configurar um arquivo Dockerfile com MultiStage Build;
+- [] Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
+- [] Autenticar-se no serviço da AWS através de comando de linha;
+- [] Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
+- [] Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
+- [] Expor a porta do container;
+- [] Acessar aplicação através do browser.
 
 
 ### Pré-requisitos:
