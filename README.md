@@ -6,15 +6,13 @@
 - Autenticar-se no serviço da AWS através de comando de linha;
 - Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
 - Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
-- Export as porta do container;
+- Expor a porta do container;
 - Acessar aplicação através do browser.
 
 
 ### Pré-requisitos:
 - Ter uma conta na AWS Service;
-- Através do IAM (serviço da AWS) cadastrar 1 usuário e vincular as seguintes politicas:  ;
 - Instalações necessárias: aws-cli, docker e docker-machine.
-
 
 
 ### Analisando o arquivo Dockerfile:
@@ -31,9 +29,10 @@ CMD [ "node", "index.js" ]
 ```
 
 Com o recurso de Multistage Build é possivel otimizar este processo de construção de imagem.
-O arquivo Dockerfile foi reestruturado.
-No primeiro FROM é realizado o build da aplicação.
-Já no segundo FROM a imagem é apenas de execução permitindo a redução para 26 MB.
+Aplicando este conceito o Dockerfile foi modificado com o seguinte detalhe:
+- No primeiro FROM é realizado o build da aplicação;
+- No segundo FROM a imagem é apenas de execução usando o nginx:alpine , e copiando aenas a pasta dist e reduzindo a imagem para 26 MB.
+Estte Dockerfile será utilizado no laboratório:
 ```
 FROM node:lts-alpine as build
 WORKDIR /app
@@ -64,7 +63,7 @@ Digite comando para configurar o usuário:
 $ aws configure
 ```
 
-Informe as credenciais (IAM):
+Informe as credenciais:
 ```
 $ AWS Access Key ID:
 $ AWS Secret Access Key:
@@ -72,6 +71,9 @@ $ Default region name:
 $ Default output format:
 
 ```
+Observação: Estas credenciais são obtidas no cadastro de usuário na AWS, utilizando o serviço IAM.
+No processo de cadastro do usuário foi vinculado 3 politicas cito:
+
 
 
 ### Subindo a imagem para o ECR
@@ -79,26 +81,30 @@ $ Default output format:
 No site da AWS,procure o serviço Elastic Container Register (ECR).
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_search.png)
 
-Após utilizar a oção "get started" será exibido um formulário, selecione a opção "Private", informe um nome para o repositório. 
-Para confirmar utilize o botão "Create Repository" no final da página.
 
+Para iniciar o processo é necessário clicar no botão "Get Started".
+Na sequencia selecione a opção "Private", informe um nome para o repositório. 
+Para finalizar utilize o botão "Create Repository", que se no final do formulário.
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_create.png)
+
 
 
 Selecione o repositório criado e utilize o botão "View push commands":
 ![](https://github.com/fabiocaettano/docker-deploy-aws/blob/main/images/ecr_commands.png)
 
+
 Será exibido uma sequencia de 4 comandos para serem copiados.
 
-O primeiro comando é outra autenticação da aws.
+1º comando:
+É outra autenticação da aws.
 Acesse o terminal e cole o comando:
 ```
 $ aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 999999999999.dkr.ecr.us-east-1.amazonaws.com
 ```
 Se tudo der certo será exibido uma mensagem no terminal: Login Successed.
 
-
-O segundo comando solicita que a imagem seja criada no seu host.
+2º comando:
+Solicita que a imagem seja criada no seu host.
 Agora acesse a pasta do projeto pelo terminal.
 O arquivo Dockerfile deve estar na raiz do projeto.
 Digite o comando no terminal:
@@ -111,28 +117,34 @@ Para visualizar a imagem no seu host:
 $ docker image ls
 ```
 
-O terceiro comando eles solicita a execução do comando docker tag (versionamento da aplicação):
+3º comando:
+Solicita a execução do comando docker tag para versionamento da aplicação:
 ```
-docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
+$ docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 ```
-O quarto comando é momento de subir imagem para o repositório da Amazon (ECR):
+
+4º comando:
+É momento de subir imagem para o repositório da Amazon (ECR):
 ```
 docker push 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 ```
 
-Volte ao site da AWS e veja a imagem:
+Volte ao site da AWS ppara visualizar a imagem inserida no repositório:
 
 
 
 
-Checar a versão do docker-machine:
+
+### Criando a instância ECD através de linha de comando
+
+Priveiro vamos checar a versão do docker-machine:
 ```
 $ docker-machine --version
 ```
 
 
 
-### PASSO 8 - INSTÂNCIA EC2
+
 
 
 
@@ -146,19 +158,11 @@ $ docker-machine --version
 
 
 ### LINKS DIVERSOS:
+[Consolde AWS](https://console.aws.amazon.com)
 [Dockerizando sua aplicação Vue.js](https://br.vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
 [Instalação AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html)
 [Instalação Docker](https://docs.docker.com/engine/install/)
 [Instalação Docker-Machine](https://docs.docker.com/machine/install-machine/)
-
-
-
-[AWS](https://console.aws.amazon.com)
-
-[DOCKER](https://www.docker.com/)
-
-[DOCKER MACHINE](https://docs.docker.com/machine)
-
 
 
 ### GLOSSÁRIO:
