@@ -2,12 +2,12 @@
 
 ### Objetivo do laboratório:
 - [x] Configurar um arquivo Dockerfile com MultiStage Build;
-- [] Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
-- [] Autenticar-se no serviço da AWS através de comando de linha;
-- [] Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
-- [] Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
-- [] Expor a porta do container;
-- [] Acessar aplicação através do browser.
+- [x] Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
+- [x] Autenticar-se no serviço da AWS através de comando de linha;
+- [x] Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
+- [x] Utiizr a ferramenta docker-machine que possibilita interagir com o servidor cloud através de comando de linha.
+- [x] Expor a porta do container;
+- [x] Acessar aplicação através do browser.
 
 
 ### Pré-requisitos:
