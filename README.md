@@ -117,7 +117,7 @@ docker tag vue-hello-world:latest 999999999999.dkr.ecr.us-east-1.amazonaws.com/v
 ```
 O quarto comando é momento de subir imagem para o repositório da Amazon (ECR):
 ```
-docker push 468981229068.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
+docker push 999999999999.dkr.ecr.us-east-1.amazonaws.com/vue-hello-world:latest
 ```
 
 Volte ao site da AWS e veja a imagem:
