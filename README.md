@@ -1,7 +1,7 @@
 # REALIZANDO UM DEPLOY NO SERVIÇO AWS 
 
 ### Objetivo do laboratório:
-- [] Configurar um arquivo Dockerfile com MultiStage Build;
+- [x] Configurar um arquivo Dockerfile com MultiStage Build;
 - [] Armazenar a imagem no repositório da AWS, utilizando o serviço ECR;
 - [] Autenticar-se no serviço da AWS através de comando de linha;
 - [] Realizar um deploy no serviço de cloud da AWS, utilizando a instância EC2;
